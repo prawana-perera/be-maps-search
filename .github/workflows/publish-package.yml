@@ -1,0 +1,34 @@
+name: Publish package to GitHub Packages
+
+on:
+  release:
+    types: [ published ]
+
+env:
+  NODE_VERSION: '18.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{env.NODE_VERSION}}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@prawana-perera'
+
+      - name: Build
+        run: |
+          yarn install
+          yarn build
+
+      - name: Publish
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
