@@ -11,7 +11,7 @@ export async function getPlaceAutocomplete(
   const { address, limit } = request
   const query = encodeURIComponent(address)
 
-  const url = `https://${tomTomBaseUrl}/search/${tomTomFuzzySearchApiVersion}/search/${query}.json'`
+  const url = `https://${tomTomBaseUrl}/search/${tomTomFuzzySearchApiVersion}/search/${query}.json`
 
   try {
     const autocomplete = await axios.get<TomTomSearchResponse>(url, {

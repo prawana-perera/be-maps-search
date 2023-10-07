@@ -58,7 +58,7 @@ describe('Map Api', () => {
         // Verify TomTom Api called correctly
         expect(axios.get).toHaveBeenCalledTimes(1)
 
-        const url = `https://${configuration.tomTomBaseUrl}/search/${configuration.tomTomFuzzySearchApiVersion}/search/${searchRequest.address}.json'`
+        const url = `https://${configuration.tomTomBaseUrl}/search/${configuration.tomTomFuzzySearchApiVersion}/search/${searchRequest.address}.json`
         expect(axios.get).toHaveBeenCalledWith(url, {
           params: {
             key: configuration.tomTomApiKey,
@@ -87,7 +87,7 @@ describe('Map Api', () => {
         expect(results).toHaveLength(2)
 
         const uriEncodedAddress = encodeURIComponent(searchRequest.address)
-        const url = `https://${configuration.tomTomBaseUrl}/search/${configuration.tomTomFuzzySearchApiVersion}/search/${uriEncodedAddress}.json'`
+        const url = `https://${configuration.tomTomBaseUrl}/search/${configuration.tomTomFuzzySearchApiVersion}/search/${uriEncodedAddress}.json`
         expect(axios.get).toHaveBeenCalledWith(url, {
           params: {
             key: configuration.tomTomApiKey,
