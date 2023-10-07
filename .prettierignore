@@ -4,3 +4,4 @@ coverage
 **/*.json
 .prettierrc
 **/*.md
+**/*.yml
