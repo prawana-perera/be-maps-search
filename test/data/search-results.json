@@ -1,0 +1,72 @@
+{
+  "summary": {
+    "query": "charlotte street",
+    "queryType": "NON_NEAR",
+    "queryTime": 29,
+    "numResults": 2,
+    "offset": 0,
+    "totalResults": 2,
+    "fuzzyLevel": 1,
+    "queryIntent": []
+  },
+  "results": [
+    {
+      "type": "Street",
+      "id": "EcePYZ-uG3vIMUf520qT5A",
+      "score": 4.6116523743,
+      "address": {
+        "streetName": "Charlotte Street",
+        "countrySecondarySubdivision": "Central Coast Queensland",
+        "countrySubdivision": "Queensland",
+        "countryCode": "AU",
+        "country": "Australia",
+        "countryCodeISO3": "AUS",
+        "freeformAddress": "Charlotte Street, Central Coast QueenslandQueensland,"
+      },
+      "position": {
+        "lat": -23.162896,
+        "lon": 150.761297
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": -23.16286,
+          "lon": 150.76096
+        },
+        "btmRightPoint": {
+          "lat": -23.16292,
+          "lon": 150.76157
+        }
+      }
+    },
+    {
+      "type": "Street",
+      "id": "JsBmAfbm7Py0wrMqYMKzmA",
+      "score": 4.6116523743,
+      "address": {
+        "streetName": "Charlotte Street",
+        "municipality": "Charters Towers",
+        "countrySecondarySubdivision": "Central Coast Queensland",
+        "countrySubdivision": "Queensland",
+        "countryCode": "AU",
+        "country": "Australia",
+        "countryCodeISO3": "AUS",
+        "freeformAddress": "Charlotte Street, Charters TowersQueensland,",
+        "localName": "Charters Towers"
+      },
+      "position": {
+        "lat": -20.076362,
+        "lon": 146.251408
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": -20.07392,
+          "lon": 146.24824
+        },
+        "btmRightPoint": {
+          "lat": -20.07767,
+          "lon": 146.25503
+        }
+      }
+    }
+  ]
+}
