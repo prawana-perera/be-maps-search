@@ -42,15 +42,6 @@ Requirements:
 
 TODOs:
 =============
-1. Implement code and tests
-   - Exception handling
-2. Improvements
-   - Add coverage reports
-   - Lint
-3. Check package.json
-   - Engines
-   - Dependency versions
-   - Audit/Vulnerabilities
 4. Add GitHub Actions
 5. Publish NPM Package
 

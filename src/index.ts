@@ -1,7 +1,7 @@
 import { getPlaceAutocomplete } from './maps-api'
 import { getConfiguration } from './configuration'
 import { SearchRequest, SearchResponse } from './types'
-import { handleAxiosErrors } from './errors'
+import { defaultError } from './errors'
 
 export async function getAutoCompleteDetails(request: SearchRequest): Promise<SearchResponse> {
   const configuration = getConfiguration()
@@ -10,7 +10,7 @@ export async function getAutoCompleteDetails(request: SearchRequest): Promise<Se
     return getPlaceAutocomplete(request, configuration)
   } catch (err) {
     return {
-      errors: [handleAxiosErrors(err)],
+      errors: [defaultError(err)],
     }
   }
 }
