@@ -1,8 +1,8 @@
 name: NodeJS with Grunt
 
 on:
-  push:
   pull_request:
+    types: [opened, edited, reopened]
     branches: [ "main" ]
 
 env:
