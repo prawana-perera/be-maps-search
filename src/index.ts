@@ -1,12 +1,26 @@
-import { getPlaceAutocomplete } from './maps-api'
+import {getPlaceAutocomplete} from './maps-api'
+import {getConfiguration} from "./configuration";
+import {SearchRequest, SearchResponse} from "./types";
+import {handleAxiosErrors} from "./errors";
 
-export async function getAutoCompleteDetails(address: any): Promise<any> {
-    const apiKey = process.env.TOMTOM_API_KEY;
-    // get autocomplete results
-    const res = getPlaceAutocomplete(process.env.TOMTOM_API_KEY, address).then(async (autocompleteResults) => {
-        const res = []
-        return res
-    })
-    // loop over and get details and map results
-    return res
+export async function getAutoCompleteDetails(request: SearchRequest): Promise<SearchResponse> {
+    const configuration = getConfiguration();
+
+    try {
+        return getPlaceAutocomplete(request, configuration);
+    } catch (err) {
+        return {
+            errors: [handleAxiosErrors(err)]
+        }
+    }
 }
+
+// const request: SearchRequest = {
+//     address: 'Charlotte Street',
+//     limit: 1, // max 100
+//     // offset: 10
+// }
+//
+// getAutoCompleteDetails(request)
+//     .then(res => console.log(res))
+//     .catch(e => console.error(e));
