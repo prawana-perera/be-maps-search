@@ -2,6 +2,7 @@ name: PR Validation
 
 on:
   pull_request:
+    types: [opened, edited, reopened]
     branches: [ "main" ]
 
 env:
@@ -14,10 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Use Node.js $NODE_VERSION
+    - name: Use Node.js ${{env.NODE_VERSION}}
       uses: actions/setup-node@v3
       with:
-        node-version: $NODE_VERSION
+        node-version: ${{env.NODE_VERSION}}
 
     - name: Build
       run: |
