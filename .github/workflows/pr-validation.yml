@@ -1,4 +1,4 @@
-name: NodeJS with Grunt
+name: PR Validation
 
 on:
   pull_request:
@@ -28,5 +28,7 @@ jobs:
         yarn prettier && yarn lint
 
     - name: Test
+      env:
+        TOMTOM_API_KEY: ${{ secrets.TOMTOM_API_KEY }}
       run: |
         yarn test
