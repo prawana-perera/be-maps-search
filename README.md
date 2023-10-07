@@ -42,7 +42,6 @@ Requirements:
 
 TODOs:
 =============
-4. Add GitHub Actions
 5. Publish NPM Package
 
 
