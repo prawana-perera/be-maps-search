@@ -39,10 +39,3 @@ Requirements:
 4. The result elements should contain important information about the place (country, municipality, etc)
 5. The returned result should be typed and easily consumable via users of the library
 6. No front-end requirements are necessary, this is purely a backend NodeJS library
-
-TODOs:
-=============
-4. Add GitHub Actions
-5. Publish NPM Package
-
-
