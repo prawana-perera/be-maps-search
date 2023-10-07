@@ -1,0 +1,32 @@
+name: NodeJS with Grunt
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  NODE_VERSION: '18.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js $NODE_VERSION
+      uses: actions/setup-node@v3
+      with:
+        node-version: $NODE_VERSION
+
+    - name: Build
+      run: |
+        yarn install
+
+    - name: Lint
+      run: |
+        yarn prettier && yarn lint
+
+    - name: Test
+      run: |
+        yarn test
